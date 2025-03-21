@@ -1,0 +1,44 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+a {
+  text-decoration: none;
+  color: #4a6fa5;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Remove default focus outlines */
+:focus {
+  outline: none;
+}
+
+/* Accessibility - add focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #4a6fa5;
+  outline-offset: 2px;
+}
