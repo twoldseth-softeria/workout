@@ -5,6 +5,8 @@ import {
   WorkoutLog,
   CreateWorkoutTypeRequest,
   CreateWorkoutLogRequest,
+  User,
+  UserResponse,
 } from '../types/workout';
 
 const API_URL = '/api';
@@ -102,5 +104,23 @@ export const deleteWorkoutLog = async (id: string): Promise<void> => {
   
   if (!response.ok) {
     throw new Error('Failed to delete workout log');
+  }
+};
+
+// Authentication API
+export const getCurrentUser = async (): Promise<User | null> => {
+  try {
+    const response = await fetch('/_me');
+    if (!response.ok) {
+      if (response.status === 401) {
+        return null; // Not authenticated
+      }
+      throw new Error('Failed to fetch current user');
+    }
+    const data: UserResponse = await response.json();
+    return data.data;
+  } catch (error) {
+    console.error('Error fetching current user:', error);
+    return null;
   }
 };

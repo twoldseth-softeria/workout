@@ -1,3 +1,9 @@
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
 export interface WorkoutType {
   id: string;
   sequence: number;
@@ -24,6 +30,10 @@ export interface WorkoutLogResponse {
   meta: {
     count: number;
   };
+}
+
+export interface UserResponse {
+  data: User;
 }
 
 export interface CreateWorkoutTypeRequest {
