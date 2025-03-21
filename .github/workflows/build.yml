@@ -34,4 +34,4 @@ jobs:
     - name: Deploy prod
       env:
         RAT_SECRET: ${{ secrets.RAT_SECRET }}
-      run: sh gg.cmd rat -v api -t 'Softeria' upload -a 'workout5' -z dist
+      run: sh gg.cmd rat -v api upload -a 'workout5' -z dist
